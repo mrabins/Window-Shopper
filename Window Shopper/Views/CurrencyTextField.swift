@@ -8,23 +8,30 @@
 
 import UIKit
 
+@IBDesignable
 class CurrencyTextField: UITextField {
-
+    
+    override func prepareForInterfaceBuilder() {
+        customizeTextField()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        customizeTextField()
+    }
+    
+    func customizeTextField() {
         // Using new color literal
         backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.25)
         
         layer.cornerRadius = 3.0
         textAlignment = .center
- 
+        
         if let pText = placeholder {
             let place = NSAttributedString(string: pText, attributes: [.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
             
             attributedPlaceholder = place
             textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            
         }
     }
 }
