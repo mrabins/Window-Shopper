@@ -1,0 +1,6 @@
+framework module Pods_Window_Shopper {
+  umbrella header "Pods-Window Shopper-umbrella.h"
+
+  export *
+  module * { export * }
+}
