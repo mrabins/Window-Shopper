@@ -10,7 +10,6 @@ import UIKit
 
 class MainVC: UIViewController {
     
-    
     @IBOutlet weak var hourlyWageTextField: CurrencyTextField!
     @IBOutlet weak var itemPriceTextField: CurrencyTextField!
     @IBOutlet weak var resultLabel: UILabel!
@@ -30,7 +29,6 @@ class MainVC: UIViewController {
         
         resultLabel.isHidden = true
         hoursLabel.isHidden = true
-        
     }
     
     @objc func calculate() {
@@ -43,13 +41,8 @@ class MainVC: UIViewController {
                 
                 resultLabel.text = "\(Wage.getHours(forWage: wage, andPrice: price))"
             }
-            
         }
-        
-        
-        
     }
-    
     
     @IBAction func clearCalculatorButtonPressed(_ sender: Any) {
         resultLabel.isHidden = true
@@ -58,6 +51,4 @@ class MainVC: UIViewController {
         hourlyWageTextField.text = nil
         itemPriceTextField.text = nil
     }
-    
 }
-
